@@ -27,25 +27,25 @@ const Setttings = ({
 		<div className={styles.container}>
 			<div className={styles.typesCharacters}>
 				<Item
-					text="Incluye numeros"
+					text="Incluye números"
 					isActive={includeNumbers}
                     type='numbers'
 					changeActive={changeIncludesCharacters}
 				/>
 				<Item
-					text="Incluye simbolos"
+					text="Incluye símbolos"
 					isActive={includeSymbols}
                     type='symbols'
 					changeActive={changeIncludesCharacters}
 				/>
 				<Item
-					text="Incluye mayusculas"
+					text="Incluye mayúsculas"
 					isActive={includeUppercase}
                     type='uppercase'
 					changeActive={changeIncludesCharacters}
 				/>
 				<Item
-					text="Incluye minusculas"
+					text="Incluye minúsculas"
 					isActive={includeLowercase}
                     type='lowercase'
 					changeActive={changeIncludesCharacters}

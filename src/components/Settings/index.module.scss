@@ -4,7 +4,7 @@
 	width: 100%;
 	border: 1px solid rgba(209, 209, 209, 0.4);
 	border-radius: 0.5rem;
-	box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+	box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
@@ -17,7 +17,6 @@
     padding: 1.5rem 2rem;
     display: flex;
     flex-wrap: wrap;
-    gap: 1em;
     justify-content: space-between;
 }
 
