@@ -29,41 +29,43 @@ const Setttings = ({
 				<Item
 					text="Incluye números"
 					isActive={includeNumbers}
-                    type='numbers'
+					type="numbers"
 					changeActive={changeIncludesCharacters}
 				/>
 				<Item
 					text="Incluye símbolos"
 					isActive={includeSymbols}
-                    type='symbols'
+					type="symbols"
 					changeActive={changeIncludesCharacters}
 				/>
 				<Item
 					text="Incluye mayúsculas"
 					isActive={includeUppercase}
-                    type='uppercase'
+					type="uppercase"
 					changeActive={changeIncludesCharacters}
 				/>
 				<Item
 					text="Incluye minúsculas"
 					isActive={includeLowercase}
-                    type='lowercase'
+					type="lowercase"
 					changeActive={changeIncludesCharacters}
 				/>
 			</div>
 			<div className={styles.longCharacters}>
 				<p className="longLabel">Longitud de contraseña</p>
 				<div className={styles.longValue}>
-					<input
-						style={{ background: background }}
-						type="range"
-						min={8}
-						max={32}
-						defaultValue={24}
-						onChange={changeLongPassword}
-                        label="Long Password"
-					/>
-					<p>{longPassword}</p>
+					<label htmlFor="rangeCharacters">
+						<input
+							id="rangeCharacters"
+							style={{ background: background }}
+							type="range"
+							min={8}
+							max={32}
+							defaultValue={24}
+							onChange={changeLongPassword}
+						/>
+						<p>{longPassword}</p>
+					</label>
 				</div>
 			</div>
 		</div>

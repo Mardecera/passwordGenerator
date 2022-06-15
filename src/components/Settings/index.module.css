@@ -29,10 +29,6 @@
 
 .longValue {
   width: 100%;
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: space-between;
 }
 
 .longValue input {
@@ -42,6 +38,14 @@
 .longCharacters {
   --track-height: 0.5rem;
   --thumb-size: 1.5rem;
+}
+
+.longCharacters label {
+  width: 100%;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .longCharacters .longValue input[type='range'] {
