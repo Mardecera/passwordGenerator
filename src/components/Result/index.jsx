@@ -6,7 +6,7 @@ const levels = {
 	good: {
 		icon: 'Check',
 		text: 'Contraseña muy segura',
-		color: '#51d376',
+		color: '#07bd3a',
 		backgroundColor: '#44bd67',
 		percent: 100,
 	},
@@ -49,12 +49,7 @@ const Result = ({ password, longPassword, changePassword }) => {
 	const divWitdh = levels[textLevel].percent
     let refreshHover = false
 
-    const showTootip = (isHover) => {
-        // if (isHover) setRefreshHover(true)
-        // else setRefreshHover(false)
-        refreshHover = isHover
-        console.log(refreshHover)
-    }
+    const showTootip = (isHover) => refreshHover = isHover
 
 	return (
 		<div className={styles.result}>

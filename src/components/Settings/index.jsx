@@ -19,7 +19,7 @@ const Setttings = ({
 	changeIncludesCharacters,
 }) => {
 	const percent = getpercentRange(longPassword)
-	const background = `linear-gradient(90deg, #51d376 ${percent}%, #d8d8d88f ${
+	const background = `linear-gradient(90deg, #07bd3a ${percent}%, #d8d8d88f ${
 		percent + 5
 	}%)`
 
@@ -61,6 +61,7 @@ const Setttings = ({
 						max={32}
 						defaultValue={24}
 						onChange={changeLongPassword}
+                        label="Long Password"
 					/>
 					<p>{longPassword}</p>
 				</div>
