@@ -24,7 +24,7 @@ body{
 
 @font-face {
 	font-family: 'Inter';
-	src: url('./static/fonts/Inter/Inter.ttf');
+	src: url('./static/fonts/Inter.ttf');
 }
 
 .App {

@@ -1,11 +1,11 @@
 import Actions from './components/Actions'
 import Result from './components/Result'
 import Setttings from './components/Settings'
-import passwordGenerator from './components/functions/passwordGenerator'
+import getPassword from './services/getPassword'
 import React, { useState } from 'react'
 
 const init = {
-	longPassword: 24,
+	passwordLength: 24,
 	numbers: true,
 	symbols: true,
 	uppercase: true,
@@ -14,20 +14,20 @@ const init = {
 
 const App = () => {
 	const [state, setState] = useState(init)
-	const [password, setPassword] = useState(passwordGenerator(init))
+	const [password, setPassword] = useState(getPassword(init))
 
-	const changePassword = () => setPassword(passwordGenerator({ ...state }))
+	const changePassword = () => setPassword(getPassword({ ...state }))
 
-	const changeLongPassword = (event) => {
-		const newState = { ...state, ...{ longPassword: event.target.value } }
+	const changePasswordLength = (event) => {
+		const newState = { ...state, ...{ passwordLength: event.target.value } }
 		setState(newState)
-		setPassword(passwordGenerator({ ...newState }))
+		setPassword(getPassword({ ...newState }))
 	}
 
 	const changeIncludesCharacters = (characterType, isActive) => {
 		const newState = { ...state, ...{[characterType] : isActive} }
 		setState(newState)
-		setPassword(passwordGenerator({ ...newState }))
+		setPassword(getPassword({ ...newState }))
 	}
 
 	return (
@@ -35,7 +35,7 @@ const App = () => {
 			<h1>Generador de contraseñas</h1>
 			<Result
 				password={password}
-				longPassword={state.longPassword}
+				passwordLength={state.passwordLength}
 				changePassword={changePassword}
 			/>
 			<Setttings
@@ -43,8 +43,8 @@ const App = () => {
 				includeSymbols={state.symbols}
 				includeUppercase={state.uppercase}
 				includeLowercase={state.lowercase}
-				longPassword={state.longPassword}
-				changeLongPassword={changeLongPassword}
+				passwordLength={state.passwordLength}
+				changePasswordLength={changePasswordLength}
 				changeIncludesCharacters={changeIncludesCharacters}
 			/>
 			<Actions password={password} changePassword={changePassword} />
