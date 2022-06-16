@@ -1,24 +1,17 @@
-import styles from './index.module.scss'
+import styles from './index.module.css'
 import Item from '../Item'
-
-const getpercentRange = (longPassword) => {
-	const minLongPassword = 8
-	const newMaxLongPassword = 32 - minLongPassword
-	const newLongPassword = longPassword - minLongPassword
-	const porcentInput = (100 * newLongPassword) / newMaxLongPassword
-	return porcentInput
-}
+import getPositionInputRange from '../../services/getPositionInputRange'
 
 const Setttings = ({
 	includeNumbers,
 	includeSymbols,
 	includeUppercase,
 	includeLowercase,
-	longPassword,
-	changeLongPassword,
+	passwordLength,
+	changePasswordLength,
 	changeIncludesCharacters,
 }) => {
-	const percent = getpercentRange(longPassword)
+	const percent = getPositionInputRange(passwordLength)
 	const background = `linear-gradient(90deg, #07bd3a ${percent}%, #d8d8d88f ${
 		percent + 5
 	}%)`
@@ -62,9 +55,9 @@ const Setttings = ({
 							min={8}
 							max={32}
 							defaultValue={24}
-							onChange={changeLongPassword}
+							onChange={changePasswordLength}
 						/>
-						<p>{longPassword}</p>
+						<p>{passwordLength}</p>
 					</label>
 				</div>
 			</div>
