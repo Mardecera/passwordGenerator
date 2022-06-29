@@ -3,7 +3,7 @@
 
 App to generate a password of _' x '_ length with the requested characters. 🗝🖥️
 
-![](https://github.com/Mardecera/passwordGenerator/blob/main/images/screenshoot.png?raw=true)
+![](https://github.com/Mardecera/passwordGenerator/blob/main/src/assets/images/screenshoot.png?raw=true)
 
 
 ## Features

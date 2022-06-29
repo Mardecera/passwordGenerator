@@ -1,30 +1,42 @@
-const getInfoSecurity = (passwordLength) => {
-    let icon = ''
-    let text = ''
-    let color = ''
-    let backColor = ''
-    let percent = 100
+import { infoSecuritySettings } from '../consts'
 
-    if (passwordLength >= 14) {
-        icon = 'Check'
-        text = 'Contraseña muy segura'
-        color = '#07bd3a'
-        backColor = '#44bd67'
-        percent = 100
-    } else if (passwordLength < 14 && passwordLength > 10) {
-        icon = 'Warning'
-        text = 'Contraseña media segura'
-        color = '#ffa500'
-        backColor = '#ffa50059'
-        percent = 50
-    } else {
-        icon = 'Cancel'
-        text = 'Contraseña insegura'
-        color = '#ed1374'
-        backColor = '#ed13743b'
-        percent = 20
+const getInfoSecurity = (config) => {
+    const passwordLength = +config.passwordLength
+    const actives = config.actives()
+    let key = ''
+
+    switch (actives) {
+        case 1:
+            passwordLength < 16
+                ? (key = 'bad')
+                : passwordLength >= 16 && passwordLength <= 18
+                ? (key = 'medium')
+                : (key = 'good')
+            break
+        case 2:
+            passwordLength < 10
+                ? (key = 'bad')
+                : passwordLength >= 10 && passwordLength <= 14
+                ? (key = 'medium')
+                : (key = 'good')
+            break
+        case 3:
+            passwordLength < 9
+                ? (key = 'bad')
+                : passwordLength >= 9 && passwordLength <= 13
+                ? (key = 'medium')
+                : (key = 'good')
+            break
+        case 4:
+            passwordLength < 9
+                ? (key = 'bad')
+                : passwordLength >= 9 && passwordLength <= 12
+                ? (key = 'medium')
+                : (key = 'good')
+            break
     }
-    return { icon, text, color, backColor, percent }
+
+    return infoSecuritySettings[key]
 }
 
 export default getInfoSecurity

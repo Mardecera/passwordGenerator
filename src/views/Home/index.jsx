@@ -21,14 +21,18 @@ const Home = () => {
         })
 
     const changeIncludesCharacters = (type, activeState) =>
-        setConfig({ ...config, ...{ [type]: activeState } })
+        config.actives() > 1
+            ? setConfig({ ...config, ...{ [type]: activeState } })
+            : activeState
+            ? setConfig({ ...config, ...{ [type]: activeState } })
+            : null
 
     return (
         <div className="App">
             <h1>Generador de contraseñas</h1>
             <Result
                 password={password}
-                passwordLength={config.passwordLength}
+                config={config}
                 changePassword={changePassword}
             />
             <Settings
