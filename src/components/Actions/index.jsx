@@ -1,5 +1,5 @@
 import styles from './index.module.css'
-import copyToClipboard from '../../services/copyToClipboard'
+import { copyToClipboard } from '../../utils'
 
 const Actions = ({ password, changePassword }) => {
 	return (
@@ -9,14 +9,14 @@ const Actions = ({ password, changePassword }) => {
 				className={`${styles.btn} ${styles.actionRefresh}`}
 			>
 				Nueva contraseña
-				<span className={styles.iconRotate}></span>
+				<span className={'icon-rotate'}></span>
 			</button>
 			<button
 				onClick={() => copyToClipboard(password)}
 				className={`${styles.btn} ${styles.actionCopy}`}
 			>
 				Copiar contraseña
-				<span className={styles.iconCopy}></span>
+				<span className={'icon-copy'}></span>
 			</button>
 		</div>
 	)

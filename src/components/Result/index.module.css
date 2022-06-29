@@ -1,134 +1,91 @@
-@font-face {
-  font-family: 'icomoon';
-  src: url("../../static/fonts/icomoon.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-  font-display: block;
-}
-
-[class^='_icon-'],
-[class*=' icon-'] {
-  font-family: 'icomoon' !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-.iconRotate {
-  position: relative;
-}
-
-.iconRotate:before {
-  content: '\e901';
-}
-
 .iconRotate:hover::after {
-  font-family: 'Inter';
-  src: url("../../static/fonts/Inter/Inter.ttf") format("truetype");
-  content: 'Nueva';
-  position: absolute;
-  width: max-content;
-  padding: .5em 1em;
-  bottom: 1.5em;
-  transform: translateX(-50%);
-  border-radius: .5em;
-  background-color: #383f58;
-  color: white;
-  font-size: .8rem;
-  opacity: .7;
-}
-
-.iconCopy {
-  position: relative;
-}
-
-.iconCopy:before {
-  content: '\e903';
+   font-family: 'Inter';
+   src: url('../../static/fonts/Inter/Inter.ttf') format('truetype');
+   content: 'Nueva';
+   position: absolute;
+   width: max-content;
+   padding: 0.5em 1em;
+   bottom: 1.5em;
+   transform: translateX(-50%);
+   border-radius: 0.5em;
+   background-color: #383f58;
+   color: white;
+   font-size: 0.8rem;
+   opacity: 0.7;
 }
 
 .iconCopy:hover::after {
-  font-family: 'Inter';
-  src: url("../../static/fonts/Inter/Inter.ttf") format("truetype");
-  content: 'Copiar';
-  position: absolute;
-  width: max-content;
-  padding: .5em 1em;
-  bottom: 1.5em;
-  transform: translateX(-50%);
-  border-radius: .5em;
-  background-color: #383f58;
-  color: white;
-  font-size: .8rem;
-  opacity: .7;
-}
-
-.iconShieldWarning:before {
-  content: '\e902';
-}
-
-.iconShieldCancel:before {
-  content: '\e904';
-}
-
-.iconShieldCheck:before {
-  content: '\e905';
+   font-family: 'Inter';
+   src: url('../../static/fonts/Inter/Inter.ttf') format('truetype');
+   content: 'Copiar';
+   position: absolute;
+   width: max-content;
+   padding: 0.5em 1em;
+   bottom: 1.5em;
+   transform: translateX(-50%);
+   border-radius: 0.5em;
+   background-color: #383f58;
+   color: white;
+   font-size: 0.8rem;
+   opacity: 0.7;
 }
 
 .result {
-  width: 100%;
+   width: 100%;
 }
 
 .container {
-  width: 100%;
-  border-radius: 0.5rem 0.5rem 0rem 0rem;
-  padding: 1.5rem 2rem;
-  box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: white;
+   width: 100%;
+   border-radius: 0.5rem 0.5rem 0rem 0rem;
+   padding: 1.5rem 2rem;
+   box-shadow: rgba(149, 157, 165, 0.5) 0px 8px 24px;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   background-color: white;
 }
 
 .showPassword {
-  overflow-x: auto;
-  white-space: pre-wrap;
+   overflow-x: auto;
+   white-space: pre-wrap;
 }
 
 .resultSecurityBar {
-  width: 100%;
-  height: .5rem;
-  border-radius: 0em 0em .5em .5em;
-  overflow: hidden;
-  background-color: white;
+   width: 100%;
+   height: 0.5rem;
+   border-radius: 0em 0em 0.5em 0.5em;
+   overflow: hidden;
+   background-color: white;
 }
 
 .resultSecurityBar div {
-  width: 50%;
-  height: 100%;
-  background-color: #51d376;
+   width: 50%;
+   height: 100%;
+   background-color: #51d376;
 }
 
 .resultActions {
-  display: flex;
-  justify-content: center;
-  gap: 1em;
-  align-items: center;
+   display: flex;
+   justify-content: center;
+   gap: 1em;
+   align-items: center;
 }
 
 .resultActions span:hover {
-  cursor: pointer;
-  color: #757575;
+   cursor: pointer;
+   color: #757575;
 }
 
 @media (max-width: 425px) {
-  .resultActions {
-    display: none;
-  }
+   .resultActions {
+      display: none;
+   }
 }
 
 .resultSecurity {
-  margin-top: 1em;
-  color: #51d376;
-  display: flex;
-  gap: 1em;
-  align-items: center;
+   margin-top: 1em;
+   color: #51d376;
+   display: flex;
+   gap: 1em;
+   align-items: center;
 }

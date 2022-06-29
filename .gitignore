@@ -7,21 +7,22 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
-*.local
-.firebase
-
-# Editor directories and files
+# Code Configuration
 .vscode/*
-!.vscode/extensions.json
-.idea
-.DS_Store
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
+.prettierrc
+
+# React JS
+node_modules/
+build/*
+dist/*
+dist-ssr
+package-lock.json
+
+# Firebase
+.firebase/*
+.firebaserc
+firebase.json
+
+# Stylesheets
 *.sass
 *.scss

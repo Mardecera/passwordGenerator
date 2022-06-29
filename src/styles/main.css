@@ -24,12 +24,15 @@ body{
 
 @font-face {
 	font-family: 'Inter';
-	src: url('./static/fonts/Inter.ttf');
+	src: url('../assets/fonts/Inter.ttf');
+}
+
+#root{
+    font-family: 'Inter';
 }
 
 .App {
     padding: 3rem 0;
-	font-family: 'Inter';
 	width: 50%;
 	max-width: 700px;
 	margin: 0 auto;

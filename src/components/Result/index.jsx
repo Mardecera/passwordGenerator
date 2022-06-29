@@ -1,6 +1,5 @@
 import styles from './index.module.css'
-import copyToClipboard from '../../services/copyToClipboard'
-import getInfoSecurity from '../../services/getInfoSecurity'
+import { copyToClipboard, getInfoSecurity } from '../../utils'
 
 const Result = ({ password, passwordLength, changePassword }) => {
 	const { icon, text, color, backColor, percent } =
@@ -13,11 +12,11 @@ const Result = ({ password, passwordLength, changePassword }) => {
 				<div className={styles.resultActions}>
 					<span
 						onClick={() => changePassword()}
-						className={styles.iconRotate}
+						className={'icon-rotate'}
 					></span>
 					<span
 						onClick={() => copyToClipboard(password)}
-						className={styles.iconCopy}
+						className={'icon-copy'}
 					></span>
 				</div>
 			</div>
@@ -37,7 +36,7 @@ const Result = ({ password, passwordLength, changePassword }) => {
 				></div>
 			</div>
 			<div className={styles.resultSecurity} style={{ color: color }}>
-				<span className={styles[`iconShield${icon}`]}></span>
+				<span className={`icon-shield${icon}`}></span>
 				<p className="securityMessage">{text}</p>
 			</div>
 		</div>
