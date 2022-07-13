@@ -4,7 +4,6 @@ import { resultConfig } from '../../consts'
 import styles from './index.module.css'
 
 const Result = ({ password, config, changePassword, handleNotification }) => {
-    
     const refreshButtonRef = useRef(null)
     const copyButtonRef = useRef(null)
     const infoSecurity = getInfoSecurity(config)

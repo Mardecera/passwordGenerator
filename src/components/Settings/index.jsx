@@ -19,7 +19,7 @@ const CreateSettingsItems = ({ config, handleClick }) => {
     ))
 }
 
-const Settings = ({ config, handleCharacters, handlePass, inputRange }) => {
+const Settings = ({ config, handleCharacters, handlePass, inputRangeRef }) => {
     const percent = getPositionInputRange(config.passwordLength)
     const linearGradient = `linear-gradient(90deg, #07bd3a`
     const background = `${linearGradient} ${percent}%, #d8d8d88f ${percent}%)`
@@ -44,7 +44,7 @@ const Settings = ({ config, handleCharacters, handlePass, inputRange }) => {
                             max={32}
                             defaultValue={24}
                             onChange={handlePass}
-                            ref={inputRange}
+                            ref={inputRangeRef}
                         />
                         <p>{config.passwordLength}</p>
                     </label>

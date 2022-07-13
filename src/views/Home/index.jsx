@@ -2,13 +2,16 @@ import React, { useState, useRef, useEffect } from 'react'
 import { Actions, Result, Settings, Notification } from '../../components'
 import { getPassword } from '../../utils'
 import { configDefault } from '../../consts'
-import './index.css'
+import styles from './index.module.css'
 
 const Home = () => {
-    const [notification, setNotification] = useState({ state: false, message: '' })
+    const [notification, setNotification] = useState({
+        state: false,
+        message: '',
+    })
     const [config, setConfig] = useState(configDefault)
     const [password, setPassword] = useState(getPassword(configDefault))
-    const inputRange = useRef(null)
+    const inputRangeRef = useRef(null)
 
     useEffect(() => {
         setPassword(getPassword({ ...config }))
@@ -19,15 +22,18 @@ const Home = () => {
     const changePasswordLength = () =>
         setConfig({
             ...config,
-            ...{ passwordLength: inputRange.current.value },
+            ...{ passwordLength: inputRangeRef.current.value },
         })
 
-    const changeIncludesCharacters = (type, activeState) =>
+    const changeIncludesCharacters = (type, activeState) => {
+        const newConfig = { ...config, ...{ [type]: activeState } }
+
         config.actives() > 1
-            ? setConfig({ ...config, ...{ [type]: activeState } })
+            ? setConfig(newConfig)
             : activeState
-            ? setConfig({ ...config, ...{ [type]: activeState } })
+            ? setConfig(newConfig)
             : null
+    }
 
     const handleNotification = (currentMessage) => {
         setNotification({ state: true, message: currentMessage })
@@ -37,7 +43,7 @@ const Home = () => {
     }
 
     return (
-        <div className="App">
+        <div className={styles.app}>
             <h1>Generador de contraseñas</h1>
             <Result
                 password={password}
@@ -49,10 +55,17 @@ const Home = () => {
                 config={config}
                 handleCharacters={changeIncludesCharacters}
                 handlePass={changePasswordLength}
-                inputRange={inputRange}
+                inputRangeRef={inputRangeRef}
             />
-            <Actions password={password} changePassword={changePassword} handleNotification={handleNotification} />
-            <Notification state={notification.state} message={notification.message} />
+            <Actions
+                password={password}
+                changePassword={changePassword}
+                handleNotification={handleNotification}
+            />
+            <Notification
+                state={notification.state}
+                message={notification.message}
+            />
         </div>
     )
 }

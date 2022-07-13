@@ -6,7 +6,7 @@
   width: max-content;
   padding: 1.5em 2em;
   font-size: .8em;
-  position: absolute;
+  position: fixed;
   top: -7rem;
   right: 0;
   margin: 2rem;

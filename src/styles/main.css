@@ -29,8 +29,11 @@ body{
 #root{
     width: 100%;
     position: relative;
-    height: 100%;
+    height: 100vh;
     font-family: 'Inter';
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: center;
 }
 
 
