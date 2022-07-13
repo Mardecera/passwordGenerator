@@ -6,6 +6,7 @@
 @media (max-width: 425px) {
     .actions {
         flex-direction: column;
+        width: 100%;
     }
     .actions button {
         width: 100%;

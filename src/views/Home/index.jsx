@@ -1,9 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Actions, Result, Settings } from '../../components'
+import { Actions, Result, Settings, Notification } from '../../components'
 import { getPassword } from '../../utils'
 import { configDefault } from '../../consts'
+import './index.css'
 
 const Home = () => {
+    const [notification, setNotification] = useState({ state: false, message: '' })
     const [config, setConfig] = useState(configDefault)
     const [password, setPassword] = useState(getPassword(configDefault))
     const inputRange = useRef(null)
@@ -27,6 +29,13 @@ const Home = () => {
             ? setConfig({ ...config, ...{ [type]: activeState } })
             : null
 
+    const handleNotification = (currentMessage) => {
+        setNotification({ state: true, message: currentMessage })
+        setTimeout(() => {
+            setNotification({ state: false, message: currentMessage })
+        }, 2000)
+    }
+
     return (
         <div className="App">
             <h1>Generador de contraseñas</h1>
@@ -34,6 +43,7 @@ const Home = () => {
                 password={password}
                 config={config}
                 changePassword={changePassword}
+                handleNotification={handleNotification}
             />
             <Settings
                 config={config}
@@ -41,7 +51,8 @@ const Home = () => {
                 handlePass={changePasswordLength}
                 inputRange={inputRange}
             />
-            <Actions password={password} changePassword={changePassword} />
+            <Actions password={password} changePassword={changePassword} handleNotification={handleNotification} />
+            <Notification state={notification.state} message={notification.message} />
         </div>
     )
 }

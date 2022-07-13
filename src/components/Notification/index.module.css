@@ -1,0 +1,26 @@
+.notification {
+  background-color: #4f566d;
+  box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.6);
+  color: white;
+  border-radius: .3rem;
+  width: max-content;
+  padding: 1.5em 2em;
+  font-size: .8em;
+  position: absolute;
+  top: -7rem;
+  right: 0;
+  margin: 2rem;
+  transition: top .3s ease;
+  pointer-events: none;
+}
+
+@media (max-width: 426px) {
+  .notification {
+    right: inherit;
+  }
+}
+
+.show {
+  top: 0;
+  transition: top .3s ease;
+}

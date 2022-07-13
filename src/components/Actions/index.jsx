@@ -1,7 +1,8 @@
 import styles from './index.module.css'
 import { copyToClipboard } from '../../utils'
 
-const Actions = ({ password, changePassword }) => {
+const Actions = ({ password, changePassword, handleNotification }) => {
+    
 	return (
 		<div className={styles.actions}>
 			<button
@@ -12,7 +13,10 @@ const Actions = ({ password, changePassword }) => {
 				<span className={'icon-rotate'}></span>
 			</button>
 			<button
-				onClick={() => copyToClipboard(password)}
+				onClick={() => { 
+                    copyToClipboard(password)
+                    handleNotification('Contraseña copiada! 😇')
+                }}
 				className={`${styles.btn} ${styles.actionCopy}`}
 			>
 				Copiar contraseña
