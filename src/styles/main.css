@@ -36,6 +36,12 @@ body{
     justify-content: center;
 }
 
+@media (max-width: 426px) {
+    #root {
+        height: min-content;
+    }
+}
+
 
 h1{
     text-align: center;

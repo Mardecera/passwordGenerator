@@ -12,11 +12,13 @@
   margin: 2rem;
   transition: top .3s ease;
   pointer-events: none;
+  text-align: center;
 }
 
 @media (max-width: 426px) {
   .notification {
     right: inherit;
+    max-width: 80%;
   }
 }
 

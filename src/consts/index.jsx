@@ -63,6 +63,9 @@ const resultConfig = {
     actionCopyTitle: 'Copiar contraseña',
 }
 
+const charactersNotification = 'Se debe tener al menos un tipo de carácter para la contraseña! 😞'
+const copyNotification = 'Contraseña copiada! 😇'
+
 export {
     maxLongPassword,
     minLongPassword,
@@ -74,4 +77,6 @@ export {
     settingConfig,
     resultConfig,
     infoSecuritySettings,
+    charactersNotification,
+    copyNotification
 }

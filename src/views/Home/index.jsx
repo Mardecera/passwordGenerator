@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react'
 import { Actions, Result, Settings, Notification } from '../../components'
 import { getPassword } from '../../utils'
-import { configDefault } from '../../consts'
+import { charactersNotification, configDefault } from '../../consts'
 import styles from './index.module.css'
 
 const Home = () => {
@@ -28,18 +28,20 @@ const Home = () => {
     const changeIncludesCharacters = (type, activeState) => {
         const newConfig = { ...config, ...{ [type]: activeState } }
 
-        config.actives() > 1
-            ? setConfig(newConfig)
-            : activeState
-            ? setConfig(newConfig)
-            : null
+        if (config.actives() > 1) setConfig(newConfig)
+        else {
+            if (activeState) setConfig(newConfig)
+            else {
+                handleNotification(charactersNotification)
+            }
+        }
     }
 
     const handleNotification = (currentMessage) => {
         setNotification({ state: true, message: currentMessage })
         setTimeout(() => {
             setNotification({ state: false, message: currentMessage })
-        }, 2000)
+        }, 3000)
     }
 
     return (

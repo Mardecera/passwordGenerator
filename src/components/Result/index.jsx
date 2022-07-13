@@ -1,6 +1,6 @@
 import { useRef } from 'react'
 import { getInfoSecurity } from '../../utils'
-import { resultConfig } from '../../consts'
+import { copyNotification, resultConfig } from '../../consts'
 import styles from './index.module.css'
 
 const Result = ({ password, config, changePassword, handleNotification }) => {
@@ -37,7 +37,7 @@ const Result = ({ password, config, changePassword, handleNotification }) => {
                             ref={copyButtonRef}
                             className={styles.actionCopy}
                             onClick={() => {
-                                handleNotification('Contraseña copiada! 😇')
+                                handleNotification(copyNotification)
                                 addTempFunctionality(copyButtonRef, 'zoom', 500)
                             }}
                             title={resultConfig.actionCopyTitle}
