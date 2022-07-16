@@ -2,7 +2,7 @@ import styles from './index.module.css'
 import { copyToClipboard } from '../../utils'
 import { copyNotification } from '../../consts'
 
-const Actions = ({ password, changePassword, handleNotification }) => {
+const Actions = ({ password, changePassword, handleNotifications }) => {
     return (
         <div className={styles.actions}>
             <button
@@ -15,7 +15,7 @@ const Actions = ({ password, changePassword, handleNotification }) => {
             <button
                 onClick={() => {
                     copyToClipboard(password)
-                    handleNotification(copyNotification)
+                    handleNotifications(copyNotification)
                 }}
                 className={`${styles.btn} ${styles.actionCopy}`}
             >

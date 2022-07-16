@@ -3,7 +3,7 @@ import { getInfoSecurity } from '../../utils'
 import { copyNotification, resultConfig } from '../../consts'
 import styles from './index.module.css'
 
-const Result = ({ password, config, changePassword, handleNotification }) => {
+const Result = ({ password, config, changePassword, handleNotifications }) => {
     const refreshButtonRef = useRef(null)
     const copyButtonRef = useRef(null)
     const infoSecurity = getInfoSecurity(config)
@@ -37,7 +37,7 @@ const Result = ({ password, config, changePassword, handleNotification }) => {
                             ref={copyButtonRef}
                             className={styles.actionCopy}
                             onClick={() => {
-                                handleNotification(copyNotification)
+                                handleNotifications(copyNotification)
                                 addTempFunctionality(copyButtonRef, 'zoom', 500)
                             }}
                             title={resultConfig.actionCopyTitle}

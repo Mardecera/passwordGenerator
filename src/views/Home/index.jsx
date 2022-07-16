@@ -1,14 +1,11 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Actions, Result, Settings, Notification } from '../../components'
+import { Actions, Result, Settings, Notifications } from '../../components'
 import { getPassword } from '../../utils'
 import { charactersNotification, configDefault } from '../../consts'
 import styles from './index.module.css'
 
 const Home = () => {
-    const [notification, setNotification] = useState({
-        state: false,
-        message: '',
-    })
+    const [notifications, setNotifications] = useState([])
     const [config, setConfig] = useState(configDefault)
     const [password, setPassword] = useState(getPassword(configDefault))
     const inputRangeRef = useRef(null)
@@ -32,16 +29,22 @@ const Home = () => {
         else {
             if (activeState) setConfig(newConfig)
             else {
-                handleNotification(charactersNotification)
+                handleNotifications(charactersNotification)
             }
         }
     }
 
-    const handleNotification = (currentMessage) => {
-        setNotification({ state: true, message: currentMessage })
-        setTimeout(() => {
-            setNotification({ state: false, message: currentMessage })
-        }, 3000)
+    const handleNotifications = (currentMessage) => {
+        const notification = {
+            isCompleted: false,
+            message: currentMessage,
+        }
+        setNotifications([...notifications, notification])
+        // setNotifications(
+        //     notifications.filter(
+        //         (notification) => notification.isCompleted === false
+        //     )
+        // )
     }
 
     return (
@@ -51,7 +54,7 @@ const Home = () => {
                 password={password}
                 config={config}
                 changePassword={changePassword}
-                handleNotification={handleNotification}
+                handleNotifications={handleNotifications}
             />
             <Settings
                 config={config}
@@ -62,12 +65,9 @@ const Home = () => {
             <Actions
                 password={password}
                 changePassword={changePassword}
-                handleNotification={handleNotification}
+                handleNotifications={handleNotifications}
             />
-            <Notification
-                state={notification.state}
-                message={notification.message}
-            />
+            <Notifications notifications={notifications} />
         </div>
     )
 }

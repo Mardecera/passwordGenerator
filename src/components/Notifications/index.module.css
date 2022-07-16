@@ -1,0 +1,44 @@
+.notifications {
+  color: white;
+  border-radius: .3rem;
+  width: max-content;
+  max-width: 100%;
+  height: max-content;
+  font-size: .8em;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+  transition: top .3s ease;
+  pointer-events: none;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+@media (max-width: 426px) {
+  .notifications {
+    right: inherit;
+    max-width: 80%;
+  }
+}
+
+.show {
+  top: 0;
+  transition: top .3s ease;
+}
+
+.notification {
+  background-color: aliceblue;
+  color: black;
+  box-shadow: 5px 5px 30px rgba(105, 108, 114, 0.6);
+  padding: 1rem;
+  border-radius: .3em;
+  width: max-content;
+  max-width: 100%;
+}
+
+.hide {
+  display: none;
+}
