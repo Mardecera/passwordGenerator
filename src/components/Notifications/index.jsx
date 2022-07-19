@@ -3,16 +3,16 @@ import { useState } from 'react'
 import styles from './index.module.css'
 
 const Notification = ({ notification }) => {
-    const [isCompleted, setIsCompleted] = useState(false)
+    const [display, setDisplay] = useState(true)
 
     setTimeout(() => {
-        setIsCompleted(true)
-    }, 3000)
+        setDisplay(false)
+    }, 8000)
 
     return (
         <div
             className={`${styles.notification} ${
-                isCompleted ? styles.hide : ''
+                display ? '' : styles.displayNone
             }`}
         >
             {notification.message}

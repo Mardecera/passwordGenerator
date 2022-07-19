@@ -36,15 +36,11 @@ const Home = () => {
 
     const handleNotifications = (currentMessage) => {
         const notification = {
+            id: new Date().getTime(),
             isCompleted: false,
             message: currentMessage,
         }
         setNotifications([...notifications, notification])
-        // setNotifications(
-        //     notifications.filter(
-        //         (notification) => notification.isCompleted === false
-        //     )
-        // )
     }
 
     return (
