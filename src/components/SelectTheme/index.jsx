@@ -1,6 +1,8 @@
 import React, { useContext, useState } from 'react'
 import { ThemeContext } from '../../contexts'
+import SelectThemeContainer from './index.styled'
 import styles from './index.module.css'
+import { themes } from '../../consts'
 
 const SelectTheme = () => {
    const [switchPosition, setSwitchPosition] = useState('left')
@@ -12,13 +14,12 @@ const SelectTheme = () => {
    }
 
    return (
-      <div
-         className={styles.theme}
-         onClick={handleSwitch}
-         style={{ backgroundColor: `${theme.sextarioColor}` }}
-      >
-         <div className={`${styles.switch} ${styles[switchPosition]}`}></div>
-      </div>
+      <SelectThemeContainer onClick={handleSwitch} theme={theme}>
+         <div className={styles.nameTheme}>
+            {theme.name === 'light' ? 'LIGHT THEME' : 'DARK THEME'}
+         </div>
+         <div className={`switch ${styles[switchPosition]}`}></div>
+      </SelectThemeContainer>
    )
 }
 

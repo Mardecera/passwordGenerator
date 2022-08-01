@@ -7,7 +7,7 @@ import { ArrowTopIcon } from '../../icons'
 import styles from './index.module.css'
 
 const SelectLanguage = ({ selectRef }) => {
-   const [ language, handleLanguage ] = useContext(LanguageContext)
+   const [language, handleLanguage] = useContext(LanguageContext)
    const [hidden, setHidden] = useState(true)
    const [rotateArrow, setRotateArrow] = useState(false)
    const outsideSelect = useClickedOutside(selectRef)
@@ -41,10 +41,18 @@ const SelectLanguage = ({ selectRef }) => {
                className={styles.options}
                style={{ display: `${hidden ? 'none' : 'flex'}` }}
             >
-               <button value="Spanish" onClick={handleOptions}>
+               <button
+                  value="Spanish"
+                  onClick={handleOptions}
+                  className={language.name === 'spanish' && styles.active}
+               >
                   Spanish
                </button>
-               <button value="English" onClick={handleOptions}>
+               <button
+                  value="English"
+                  onClick={handleOptions}
+                  className={language.name === 'english' && styles.active}
+               >
                   English
                </button>
             </div>

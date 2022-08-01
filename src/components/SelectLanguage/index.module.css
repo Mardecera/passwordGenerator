@@ -51,3 +51,8 @@
   color: white;
   background-color: #0084ff;
 }
+
+.active {
+  background-color: #0084ff;
+  color: white;
+}

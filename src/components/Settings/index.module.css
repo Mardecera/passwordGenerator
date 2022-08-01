@@ -1,4 +1,4 @@
-.container {
+/* .container {
    width: 100%;
    outline: 1px solid rgba(209, 209, 209, 0.4);
    border-radius: 0.5rem;
@@ -11,7 +11,7 @@
    flex-direction: column;
 
    transition: box-shadow .5s ease, background-color .5s ease, outline .5s ease, color .5s ease;
-}
+} */
 
 .typesCharacters {
    padding: 1.5rem 2rem;
@@ -81,19 +81,19 @@
    }
 }
 
-.item {
+/* .item {
    width: 50%;
    display: flex;
    align-items: center;
    gap: 0.5em;
    padding: 0.5em;
-}
+} */
 
-.item:hover {
+/* .item:hover {
    cursor: pointer;
    background-color: rgba(236, 236, 236, 0.699);
    border-radius: 0.5em;
-}
+} */
 
 .active:before {
    color: #07bd3a;
@@ -103,8 +103,8 @@
    cursor: pointer;
 }
 
-@media (max-width: 425px) {
+/* @media (max-width: 425px) {
    .item {
       width: 100%;
    }
-}
+} */

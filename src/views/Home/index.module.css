@@ -1,12 +1,19 @@
 .container {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   display: flex;
-  position: relative;
   font-family: 'Inter';
   padding: 3rem 2rem;
   justify-content: center;
   transition: background-color .5s ease;
+  position: absolute;
+  overflow: auto;
+}
+
+.container .titleApp {
+  font-weight: bold;
+  transition: color .5s ease;
+  text-align: center;
 }
 
 .container .app {
@@ -16,6 +23,12 @@
   display: flex;
   flex-direction: column;
   gap: 2em;
+}
+
+@media (max-width: 768px) {
+  .container .app {
+    width: 80%;
+  }
 }
 
 @media (max-width: 426px) {

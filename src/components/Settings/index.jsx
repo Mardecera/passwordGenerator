@@ -2,15 +2,19 @@ import styles from './index.module.css'
 import { getPositionInputRange, getTypeCharacter } from '../../utils'
 import { useContext } from 'react'
 import { LanguageContext, ThemeContext } from '../../contexts'
+import { Item, SettingsContainer } from './index.styled'
 
 const CreateSettingsItems = ({ config, handleClick, items }) => {
+   const [theme] = useContext(ThemeContext)
+
    return items.map((item, index) => {
       const typeCharacter = getTypeCharacter(item)
+
       return (
-         <div
-            className={styles.item}
+         <Item
             key={index}
             onClick={() => handleClick(typeCharacter, !config[typeCharacter])}
+            theme={theme}
          >
             <span
                className={`icon-check ${
@@ -18,7 +22,7 @@ const CreateSettingsItems = ({ config, handleClick, items }) => {
                }`}
             ></span>
             <p className={styles.itemLabel}>{item}</p>
-         </div>
+         </Item>
       )
    })
 }
@@ -31,15 +35,7 @@ const Settings = ({ config, handleCharacters, handlePass, inputRangeRef }) => {
    const background = `${linearGradient} ${percent}%, #d8d8d88f ${percent}%)`
 
    return (
-      <div
-         className={styles.container}
-         style={{
-            backgroundColor: theme.quinaryColor,
-            boxShadow: theme.shadowBox,
-            color: theme.tertiaryColor,
-            outline: theme.settingsOutline,
-         }}
-      >
+      <SettingsContainer theme={theme}>
          <div className={styles.typesCharacters}>
             <CreateSettingsItems
                config={config}
@@ -47,7 +43,10 @@ const Settings = ({ config, handleCharacters, handlePass, inputRangeRef }) => {
                items={language.charactersPassword.labels}
             />
          </div>
-         <div className={styles.longCharacters}>
+         <div
+            className={styles.longCharacters}
+            style={{ borderTop: theme.settingsBorderTop }}
+         >
             <p className="longLabel">{language.longPassword.label}</p>
             <div className={styles.longValue}>
                <label htmlFor="rangeCharacters">
@@ -65,7 +64,45 @@ const Settings = ({ config, handleCharacters, handlePass, inputRangeRef }) => {
                </label>
             </div>
          </div>
-      </div>
+      </SettingsContainer>
+      // <div
+      //    className={styles.container}
+      //    style={{
+      //       backgroundColor: theme.quinaryColor,
+      //       boxShadow: theme.shadowBox,
+      //       color: theme.tertiaryColor,
+      //       outline: theme.settingsOutline,
+      //    }}
+      // >
+      //    <div className={styles.typesCharacters}>
+      //       <CreateSettingsItems
+      //          config={config}
+      //          handleClick={handleCharacters}
+      //          items={language.charactersPassword.labels}
+      //       />
+      //    </div>
+      //    <div
+      //       className={styles.longCharacters}
+      //       style={{ borderTop: theme.settingsBorderTop }}
+      //    >
+      //       <p className="longLabel">{language.longPassword.label}</p>
+      //       <div className={styles.longValue}>
+      //          <label htmlFor="rangeCharacters">
+      //             <input
+      //                id="rangeCharacters"
+      //                style={{ background: background }}
+      //                type="range"
+      //                min={8}
+      //                max={32}
+      //                defaultValue={24}
+      //                onChange={handlePass}
+      //                ref={inputRangeRef}
+      //             />
+      //             <p>{config.passwordLength}</p>
+      //          </label>
+      //       </div>
+      //    </div>
+      // </div>
    )
 }
 

@@ -62,7 +62,7 @@ const Home = () => {
          <div className={styles.app}>
             <SelectTheme />
             <SelectLanguage selectRef={selectRef} />
-            <h1 style={{color: theme.primaryColor}}>{language.title}</h1>
+            <h1 className={styles.titleApp} style={{color: theme.tertiaryColor}}>{language.title}</h1>
             <Result
                password={password}
                config={config}
