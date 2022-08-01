@@ -1,14 +1,11 @@
-import { useRef } from 'react'
+import { useContext, useRef } from 'react'
+import { LanguageContext, ThemeContext } from '../../contexts'
 import { getInfoSecurity } from '../../utils'
 import styles from './index.module.css'
 
-const Result = ({
-   password,
-   config,
-   changePassword,
-   handleNotifications,
-   language,
-}) => {
+const Result = ({ password, config, changePassword, handleNotifications }) => {
+   const [theme, ] = useContext(ThemeContext)
+   const [language, ] = useContext(LanguageContext)
    const refreshButtonRef = useRef(null)
    const copyButtonRef = useRef(null)
    const infoSecurity = getInfoSecurity(config)
@@ -22,8 +19,14 @@ const Result = ({
    return (
       <>
          <div className={styles.result}>
-            <div className={styles.container}>
-               <span className={styles.showPassword} title={password}>
+            <div
+               className={styles.container}
+               style={{
+                  backgroundColor: theme.quinaryColor,
+                  boxShadow: theme.shadowBox,
+               }}
+            >
+               <span className={styles.showPassword} title={password} style={{color: theme.tertiaryColor}}>
                   {password}
                </span>
                <div className={styles.resultActions}>
@@ -36,7 +39,7 @@ const Result = ({
                      }}
                      title={language.refreshPassword.title}
                   >
-                     <span className={'icon-rotate'}></span>
+                     <span className={'icon-rotate'} style={{color: theme.tertiaryColor}}></span>
                   </button>
                   <button
                      ref={copyButtonRef}
@@ -47,7 +50,7 @@ const Result = ({
                      }}
                      title={language.copyPassword.title}
                   >
-                     <span className={'icon-copy'}></span>
+                     <span className={'icon-copy'} style={{color: theme.tertiaryColor}}></span>
                   </button>
                </div>
             </div>

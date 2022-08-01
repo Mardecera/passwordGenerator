@@ -1,5 +1,7 @@
 import styles from './index.module.css'
 import { getPositionInputRange, getTypeCharacter } from '../../utils'
+import { useContext } from 'react'
+import { LanguageContext, ThemeContext } from '../../contexts'
 
 const CreateSettingsItems = ({ config, handleClick, items }) => {
    return items.map((item, index) => {
@@ -21,19 +23,23 @@ const CreateSettingsItems = ({ config, handleClick, items }) => {
    })
 }
 
-const Settings = ({
-   config,
-   handleCharacters,
-   handlePass,
-   inputRangeRef,
-   language,
-}) => {
+const Settings = ({ config, handleCharacters, handlePass, inputRangeRef }) => {
+   const [theme] = useContext(ThemeContext)
+   const [language] = useContext(LanguageContext)
    const percent = getPositionInputRange(config.passwordLength)
    const linearGradient = `linear-gradient(90deg, #07bd3a`
    const background = `${linearGradient} ${percent}%, #d8d8d88f ${percent}%)`
 
    return (
-      <div className={styles.container}>
+      <div
+         className={styles.container}
+         style={{
+            backgroundColor: theme.quinaryColor,
+            boxShadow: theme.shadowBox,
+            color: theme.tertiaryColor,
+            outline: theme.settingsOutline,
+         }}
+      >
          <div className={styles.typesCharacters}>
             <CreateSettingsItems
                config={config}

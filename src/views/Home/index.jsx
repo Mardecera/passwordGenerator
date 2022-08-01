@@ -1,15 +1,25 @@
-import React, { useState, useRef, useEffect } from 'react'
-import { Actions, Result, Settings, Notifications } from '../../components'
-import { configDefault, languages } from '../../consts'
+import React, { useState, useRef, useEffect, useContext } from 'react'
+import {
+   Actions,
+   Result,
+   Settings,
+   Notifications,
+   SelectLanguage,
+   SelectTheme,
+} from '../../components'
+import { configDefault } from '../../consts'
+import { LanguageContext, ThemeContext } from '../../contexts'
 import { getPassword } from '../../utils'
 import styles from './index.module.css'
 
 const Home = () => {
-   const [language, setLanguage] = useState(languages.spanish)
+   const [theme] = useContext(ThemeContext)
+   const [language] = useContext(LanguageContext)
    const [notifications, setNotifications] = useState([])
    const [config, setConfig] = useState(configDefault.app)
    const [password, setPassword] = useState(getPassword(configDefault.app))
    const inputRangeRef = useRef(null)
+   const selectRef = useRef(null)
 
    useEffect(() => {
       setPassword(getPassword({ ...config }))
@@ -45,29 +55,33 @@ const Home = () => {
    }
 
    return (
-      <div className={styles.app}>
-         <h1>{language.title}</h1>
-         <Result
-            password={password}
-            config={config}
-            changePassword={changePassword}
-            handleNotifications={handleNotifications}
-            language={language}
-         />
-         <Settings
-            config={config}
-            handleCharacters={changeIncludesCharacters}
-            handlePass={changePasswordLength}
-            inputRangeRef={inputRangeRef}
-            language={language}
-         />
-         <Actions
-            password={password}
-            changePassword={changePassword}
-            handleNotifications={handleNotifications}
-            language={language}
-         />
-         <Notifications notifications={notifications} language={language} />
+      <div
+         className={styles.container}
+         style={{ backgroundColor: `${theme.quaternaryColor}` }}
+      >
+         <div className={styles.app}>
+            <SelectTheme />
+            <SelectLanguage selectRef={selectRef} />
+            <h1 style={{color: theme.primaryColor}}>{language.title}</h1>
+            <Result
+               password={password}
+               config={config}
+               changePassword={changePassword}
+               handleNotifications={handleNotifications}
+            />
+            <Settings
+               config={config}
+               handleCharacters={changeIncludesCharacters}
+               handlePass={changePasswordLength}
+               inputRangeRef={inputRangeRef}
+            />
+            <Actions
+               password={password}
+               changePassword={changePassword}
+               handleNotifications={handleNotifications}
+            />
+            <Notifications notifications={notifications} />
+         </div>
       </div>
    )
 }

@@ -1,4 +1,15 @@
-.app {
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  position: relative;
+  font-family: 'Inter';
+  padding: 3rem 2rem;
+  justify-content: center;
+  transition: background-color .5s ease;
+}
+
+.container .app {
   display: flex;
   align-items: center;
   max-width: 700px;
@@ -8,7 +19,7 @@
 }
 
 @media (max-width: 426px) {
-  .app {
+  .container .app {
     max-width: 100%;
     width: 100%;
   }

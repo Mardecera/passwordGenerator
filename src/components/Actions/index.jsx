@@ -1,12 +1,10 @@
 import styles from './index.module.css'
 import { copyToClipboard } from '../../utils'
+import { useContext } from 'react'
+import { LanguageContext } from '../../contexts'
 
-const Actions = ({
-   password,
-   changePassword,
-   handleNotifications,
-   language,
-}) => {
+const Actions = ({ password, changePassword, handleNotifications }) => {
+   const [language] = useContext(LanguageContext)
    return (
       <div className={styles.actions}>
          <button

@@ -1,0 +1,33 @@
+.theme {
+  position: relative;
+  display: flex;
+  align-items: center;
+  box-shadow: inset 5px 0px 20px rgba(29, 26, 26, 0.356);
+  border-radius: 200px;
+  padding: 0.5rem;
+  transition: background-color .3s ease;
+  width: 5rem;
+  height: 2.5rem;
+}
+
+.theme .switch {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 100%;
+  background-color: white;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.404);
+  position: absolute;
+  transition: left 0.3s ease;
+}
+
+.left {
+  left: 5%;
+}
+
+.right {
+  left: 55%;
+}
+
+.hidden {
+  display: none !important;
+}

@@ -1,0 +1,53 @@
+.select {
+  position: relative;
+}
+
+.select .placeholder {
+  padding: 1em 2em;
+  border-radius: 0.3em;
+  border: none;
+  outline: none;
+  box-shadow: 0.5em 0.3em 30px rgba(48, 47, 47, 0.4);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.select .placeholder div::first-letter {
+  text-transform: uppercase;
+}
+
+.select .placeholder svg {
+  height: .5rem;
+  transition: rotate 2s ease;
+}
+
+.select .placeholder svg.down {
+  transform: rotate(180deg);
+}
+
+.select .placeholder svg.down {
+  transform: rotate(180deg);
+}
+
+.select .options {
+  display: none;
+  flex-direction: column;
+  box-shadow: 0.5em 0.3em 30px rgba(48, 47, 47, 0.4);
+  border-radius: 0.3em;
+  position: absolute;
+  top: 120%;
+  width: 100%;
+}
+
+.select .options button {
+  padding: 1em 1em;
+  outline: none;
+  border: none;
+}
+
+.select .options button:hover {
+  color: white;
+  background-color: #0084ff;
+}

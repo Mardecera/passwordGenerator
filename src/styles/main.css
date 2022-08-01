@@ -1,32 +1,32 @@
 @font-face {
-    font-family: 'Inter';
-    src: url('../assets/fonts/InterR.ttf');
+   font-family: 'Inter';
+   src: url('../assets/fonts/InterR.ttf');
 }
 
 @font-face {
-    font-family: 'InterLighter';
-    src: url('../assets/fonts/InterL.ttf');
+   font-family: 'InterLighter';
+   src: url('../assets/fonts/InterL.ttf');
 }
 
 *,
 ::after,
 ::before {
-	padding: 0em;
-	margin: 0em;
-	box-sizing: border-box;
+   padding: 0em;
+   margin: 0em;
+   box-sizing: border-box;
 }
 
 html {
-	height: 100vh;
+   height: 100vh;
 }
 
-body{
-    min-height: 100vh;
-    position: relative;
-    background-color: #f5f5f5;
+body {
+   min-height: 100vh;
+   position: relative;
+   background-color: #f5f5f5;
 }
 
-#root{
+/* #root{
     width: 100%;
     position: relative;
     height: 100vh;
@@ -34,48 +34,50 @@ body{
     padding: 3rem 2rem;
     display: flex;
     justify-content: center;
-}
+} */
 
 @media (max-width: 426px) {
-    #root {
-        height: min-content;
-    }
+   #root {
+      height: min-content;
+   }
 }
 
-
-h1{
-    text-align: center;
-    color: rgb(71, 107, 185);
+h1 {
+   text-align: center;
+   color: rgb(71, 107, 185);
 }
 
-@media (max-width: 768px){
-    .App{
-        width: 80%;
-    }
+@media (max-width: 768px) {
+   .App {
+      width: 80%;
+   }
 }
 
-.rotate span{
-    animation: rotateIcon .5s;
+.rotate span {
+   animation: rotateIcon 0.5s;
 }
 
 @keyframes rotateIcon {
-    0% {
-        transform: rotate(0deg);
-    } 100%{
-        transform: rotate(360deg);
-    }
+   0% {
+      transform: rotate(0deg);
+   }
+   100% {
+      transform: rotate(360deg);
+   }
 }
 
-.zoom span{
-    animation: zoomOutIcon .5s
+.zoom span {
+   animation: zoomOutIcon 0.5s;
 }
 
 @keyframes zoomOutIcon {
-    0% {
-        transform: scale(1);
-    } 50% {
-        transform: scale(.8);
-    } 100% {
-        transform: scale(1);
-    }
+   0% {
+      transform: scale(1);
+   }
+   50% {
+      transform: scale(0.8);
+   }
+   100% {
+      transform: scale(1);
+   }
 }

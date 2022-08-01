@@ -1,5 +1,6 @@
 const languages = {
    spanish: {
+      name: 'spanish',
       title: 'Generador de contraseñas',
       levelPassword: {
          labels: {
@@ -33,6 +34,7 @@ const languages = {
       },
    },
    english: {
+      name: 'english',
       title: 'Password generator',
       levelPassword: {
          labels: {
