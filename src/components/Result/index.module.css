@@ -73,7 +73,6 @@
    border-radius: 0em 0em 0.5em 0.5em;
    overflow: hidden;
    background-color: white;
-   z-index: 2 !important;
 }
 
 .resultSecurityBar div {

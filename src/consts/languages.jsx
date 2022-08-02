@@ -1,7 +1,8 @@
 const languages = {
    spanish: {
       name: 'spanish',
-      title: 'Generador de contraseñas',
+      title: 'Crea tu contraseña segura',
+      subTitle: 'Use nuestra aplicación para generar una contraseña segura, aleatoria e instantánea',
       levelPassword: {
          labels: {
             good: 'Contraseña muy segura',
@@ -32,10 +33,16 @@ const languages = {
          title: 'Copiar contraseña',
          notification: 'Contraseña copiada! 😊',
       },
+      menu: {
+         title: 'Configuración',
+         theme: 'Tema',
+         language: 'Idioma'
+      }
    },
    english: {
       name: 'english',
-      title: 'Password generator',
+      title: 'Create your secure password',
+      subTitle: 'Use our app to generate a secure, random and instant password',
       levelPassword: {
          labels: {
             good: 'Very strong password',
@@ -65,6 +72,11 @@ const languages = {
          title: 'Copy password',
          notification: 'Password copied! 😊',
       },
+      menu: {
+         title: 'Settings',
+         theme: 'Theme',
+         language: 'Language'
+      }
    },
 }
 

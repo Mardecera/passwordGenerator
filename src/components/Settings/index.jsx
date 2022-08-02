@@ -65,44 +65,6 @@ const Settings = ({ config, handleCharacters, handlePass, inputRangeRef }) => {
             </div>
          </div>
       </SettingsContainer>
-      // <div
-      //    className={styles.container}
-      //    style={{
-      //       backgroundColor: theme.quinaryColor,
-      //       boxShadow: theme.shadowBox,
-      //       color: theme.tertiaryColor,
-      //       outline: theme.settingsOutline,
-      //    }}
-      // >
-      //    <div className={styles.typesCharacters}>
-      //       <CreateSettingsItems
-      //          config={config}
-      //          handleClick={handleCharacters}
-      //          items={language.charactersPassword.labels}
-      //       />
-      //    </div>
-      //    <div
-      //       className={styles.longCharacters}
-      //       style={{ borderTop: theme.settingsBorderTop }}
-      //    >
-      //       <p className="longLabel">{language.longPassword.label}</p>
-      //       <div className={styles.longValue}>
-      //          <label htmlFor="rangeCharacters">
-      //             <input
-      //                id="rangeCharacters"
-      //                style={{ background: background }}
-      //                type="range"
-      //                min={8}
-      //                max={32}
-      //                defaultValue={24}
-      //                onChange={handlePass}
-      //                ref={inputRangeRef}
-      //             />
-      //             <p>{config.passwordLength}</p>
-      //          </label>
-      //       </div>
-      //    </div>
-      // </div>
    )
 }
 

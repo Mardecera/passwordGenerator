@@ -11,8 +11,8 @@ const darkTheme = {
    settingsOutline: '0px !important',
    buttonSwitchThemeColor: '#ffa500',
    buttonSelectTheme: {
-      backgroundColor: 'linear-gradient(90deg, rgb(84 84 217) 27%, rgba(0,212,255,1) 100%)',
-      switchButtonColor: '#ffa500'
+      backgroundColor: '#ffa500 ',
+      switchButtonColor: '#ffffff'
    },
    settingsBorderTop: '1px solid #38353530',
    securityBarColor: {
@@ -27,7 +27,7 @@ const lightTheme = {
    name: 'light',
    primaryColor: '#476BB9',
    secondaryColor: '#33B35B',
-   tertiaryColor: '#202020',
+   tertiaryColor: '#3c3e41',
    quaternaryColor: '#FFFFFF',
    quinaryColor: '#ffffff',
    sextarioColor: '#ffa500',
@@ -36,7 +36,7 @@ const lightTheme = {
    settingsOutline: '1px solid rgba(209, 209, 209, 0.4)',
    buttonSwitchThemeColor: '#293342',
    buttonSelectTheme: {
-      backgroundColor: 'linear-gradient(90deg,rgba(167,167,167,1) 27%,rgba(0,0,0,1) 86%)',
+      backgroundColor: '#444f64d5',
       switchButtonColor: '#ffffff'
    },
    settingsBorderTop: '1px solid #e9e8e8',

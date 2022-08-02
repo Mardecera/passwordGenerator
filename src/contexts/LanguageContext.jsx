@@ -5,7 +5,7 @@ import { languages } from '../consts'
 export const LanguageContext = createContext()
 
 export const LanguageProvider = ({ children }) => {
-   const [language, setLanguage] = useState(languages.spanish)
+   const [language, setLanguage] = useState(languages.english)
 
    const handleLanguage = () => {
       const newLanguage = language.name === 'spanish' ? 'english' : 'spanish'

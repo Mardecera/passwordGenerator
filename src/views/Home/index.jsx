@@ -6,11 +6,13 @@ import {
    Notifications,
    SelectLanguage,
    SelectTheme,
+   Menu,
+   Heading,
 } from '../../components'
 import { configDefault } from '../../consts'
 import { LanguageContext, ThemeContext } from '../../contexts'
 import { getPassword } from '../../utils'
-import styles from './index.module.css'
+import HomeElement from './index.styled'
 
 const Home = () => {
    const [theme] = useContext(ThemeContext)
@@ -19,7 +21,6 @@ const Home = () => {
    const [config, setConfig] = useState(configDefault.app)
    const [password, setPassword] = useState(getPassword(configDefault.app))
    const inputRangeRef = useRef(null)
-   const selectRef = useRef(null)
 
    useEffect(() => {
       setPassword(getPassword({ ...config }))
@@ -55,14 +56,10 @@ const Home = () => {
    }
 
    return (
-      <div
-         className={styles.container}
-         style={{ backgroundColor: `${theme.quaternaryColor}` }}
-      >
-         <div className={styles.app}>
-            <SelectTheme />
-            <SelectLanguage selectRef={selectRef} />
-            <h1 className={styles.titleApp} style={{color: theme.tertiaryColor}}>{language.title}</h1>
+      <HomeElement theme={theme}>
+         <div className='app'>
+            <Menu/>
+            <Heading/>
             <Result
                password={password}
                config={config}
@@ -82,7 +79,7 @@ const Home = () => {
             />
             <Notifications notifications={notifications} />
          </div>
-      </div>
+      </HomeElement>
    )
 }
 

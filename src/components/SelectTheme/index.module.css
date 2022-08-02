@@ -1,9 +1,9 @@
 .left {
-  left: 3%;
+  transform: translateX(0%);
 }
 
 .right {
-  left: 70%;
+  transform: translateX(130%);
 }
 
 .hidden {

@@ -15,9 +15,6 @@ const SelectTheme = () => {
 
    return (
       <SelectThemeContainer onClick={handleSwitch} theme={theme}>
-         <div className={styles.nameTheme}>
-            {theme.name === 'light' ? 'LIGHT THEME' : 'DARK THEME'}
-         </div>
          <div className={`switch ${styles[switchPosition]}`}></div>
       </SelectThemeContainer>
    )
