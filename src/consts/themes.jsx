@@ -10,6 +10,7 @@ const darkTheme = {
    shadowBox: 'rgb(26 29 32 / 50%) 0px 8px 24px',
    settingsOutline: '0px !important',
    buttonSwitchThemeColor: '#ffa500',
+   backgroundColorApp: '#414350',
    buttonSelectTheme: {
       backgroundColor: '#ffa500 ',
       switchButtonColor: '#ffffff'
@@ -34,6 +35,7 @@ const lightTheme = {
 
    shadowBox: 'rgb(149 157 165 / 50%) 0px 8px 24px',
    settingsOutline: '1px solid rgba(209, 209, 209, 0.4)',
+   backgroundColorApp: '#e4e9ef',
    buttonSwitchThemeColor: '#293342',
    buttonSelectTheme: {
       backgroundColor: '#444f64d5',

@@ -1,6 +1,6 @@
 import { useContext, useRef } from 'react'
 import { LanguageContext, ThemeContext } from '../../contexts'
-import { getInfoSecurity } from '../../utils'
+import { copyToClipboard, getInfoSecurity } from '../../utils'
 import styles from './index.module.css'
 
 const Result = ({ password, config, changePassword, handleNotifications }) => {
@@ -45,6 +45,7 @@ const Result = ({ password, config, changePassword, handleNotifications }) => {
                      ref={copyButtonRef}
                      className={styles.actionCopy}
                      onClick={() => {
+                        copyToClipboard(password)
                         handleNotifications(language.copyPassword.notification)
                         addTempFunctionality(copyButtonRef, 'zoom', 500)
                      }}

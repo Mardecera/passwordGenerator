@@ -13,7 +13,7 @@ const HomeElement = styled.div`
          transition: background-color 0.5s ease;
          position: absolute;
          overflow: auto;
-         background-color: ${theme.quaternaryColor};
+         background-color: ${theme.backgroundColorApp};
 
          & .app {
             display: flex;
